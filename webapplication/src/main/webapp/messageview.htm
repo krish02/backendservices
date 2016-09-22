@@ -1,0 +1,47 @@
+<style type="text/css">
+/*Style for Table*/
+table, th , td {
+border: 1px solid grey;
+border-collapse: collapse;
+padding: 4px;
+font-family: arial;
+}
+/*Style for Table Header*/
+th {
+background: darkblue;
+color: white;
+text-align: left;
+}
+/*Style for Alternate Rows*/
+table tr:nth-child(odd) {
+background-color: #C2EBC3;
+}
+table tr:nth-child(even) {
+background-color: #FFFFFF;
+}
+</style>
+
+<div>
+display -- {{messageId}} --{{messageSystem}}
+<div data-ng-show="messages.length"  data-ng-init="callMessage()">
+<table>
+<tr>
+<td>id</td>
+<td>destinationSystemId</td>
+<td>requestedStatus</td>
+<!-- <td>instructions</td> -->
+<td>accountNumber</td>
+<td>currentStatus</td>
+</tr>
+<tr data-ng-repeat="message in messages" > 
+<!-- data-ng-click="drillDown(message)" -->
+<td><a  data-href data-ng-click="redirectToInstructionView(message)">{{message.system}}-{{message.id}}</a></td>
+<td>{{message.destinationSystemId}}</td>
+<td>{{message.requestedStatus}}</td>
+<!-- <td>{{message.instructions}}</td> -->
+<td>{{message.accountNumber}}</td>
+<td>{{message.currentStatus}}</td>
+</tr>
+</table>
+</div>
+</div>

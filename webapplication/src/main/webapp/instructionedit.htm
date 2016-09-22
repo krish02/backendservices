@@ -1,0 +1,63 @@
+<style type="text/css">
+/*Style for Table*/
+table, th , td {
+border: 1px solid grey;
+border-collapse: collapse;
+padding: 4px;
+font-family: arial;
+}
+/*Style for Table Header*/
+th {
+background: darkblue;
+color: white;
+text-align: left;
+}
+/*Style for Alternate Rows*/
+table tr:nth-child(odd) {
+background-color: #C2EBC3;
+}
+table tr:nth-child(even) {
+background-color: #FFFFFF;
+}
+</style>
+
+<div>
+<h2><button data-ng-click='updatePost()'>update</button></h2>
+<div data-ng-show="instructions.length" > 
+	<!--  data-ng-init="callMessage()"> -->
+ <table>
+<tr>
+<td><input type="checkbox" data-ng-model="selectAllItems" data-ng-change="selectAll()" data-ng-init='checkStatus=false'>SelectAll</td>
+<td>instructionId</td>
+<td>region</td>
+<td>status</td>
+<td>settledPar</td>
+<td>settleRequestPar</td>
+<td>deal</td>
+<td>updateTime</td>
+<td>requestedPar</td>
+<td>requestedStatus</td>
+<td>instructionId</td>
+<td>destinationAccount</td>
+</tr>
+<tr data-ng-repeat="instruction in instructions" > 
+<!-- data-ng-click=""  data-ng-change="validate()"--> 
+<td><input type="checkbox" data-ng-init='checkStatus=false'  data-ng-model="instruction.isChecked" ></td>
+<td>{{instruction.instructionId}}</td>
+<td>{{instruction.region}}</td>
+<td>{{instruction.status}}</td>
+<td>{{instruction.settledPar}}</td>
+<td>settleRequestPar</td>
+ <td><input type="text" data-ng-model="samp" data-ng-init="{{instruction.requestedPar -instruction.settledPar}}"  
+ data-ng-max="{{instruction.requestedPar -instruction.settledPar}}" data-required ></td>
+<td>{{instruction.deal}}</td>
+<td>{{instruction.updateTime}}</td>
+<td>{{instruction.requestedPar}}</td>
+<td>{{instruction.requestedStatus}}</td>
+<td>{{instruction.instructionId}}</td>
+<td>{{instruction.destinationAccount}}</td>
+
+</tr>
+</table>
+</div>
+</div> 

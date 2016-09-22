@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+ -->
+
+<script src="script/lib/angular.min.js"></script>
+<script src="script/lib/angular-route.min.js"></script>
+<script src="script/lib/angular-ui-router.min.js"></script>
+<script src="services.js"></script>
+<script src="controllers.js"></script>
+<script src="configuration.js"></script>
+
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body data-ng-app="mydemo">
+<div data-ng-controller="MasterController">
+<h2>welcome to main screen {{helloTo.title}}</h2>
+
+<select data-ng-model="$root.screenName" data-ng-change="changedValue(screenName)" data-ng-options="screenName for screenName in screenNames"></select>
+
+<!-- <button data-ng-click='redirect()'>Click</button> -->
+
+        <div data-ui-view=""></div>
+</div>
+
+</body>
+</html>
